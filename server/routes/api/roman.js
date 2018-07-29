@@ -49,19 +49,22 @@ function simpleToRoman(num){
         case 9: return one+ten
     }
 }
-app.get("/roman/:num_str?", function (req, res) {
-  try{
-    var num = parseInt(req.params.num_str);
-    if(isNaN(num)){
-      throw "Invalid num";
-    }
-    
-    var num_roman = convertToRoman(num);
-    res.json({"num" : num,  "roman" : num_roman});
-  }
-  catch(err){
-    res.json({"error" : "Invalid num" });
-  }
-  
-});
+
+module.exports = (app) => {
+    app.get("/roman/:num_str?", function (req, res) {
+      try{
+        var num = parseInt(req.params.num_str);
+        if(isNaN(num)){
+          throw "Invalid num";
+        }
+        
+        var num_roman = convertToRoman(num);
+        res.json({"num" : num,  "roman" : num_roman});
+      }
+      catch(err){
+        res.json({"error" : "Invalid num" });
+      }
+      
+    });
+};
 //---------
