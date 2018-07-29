@@ -1,6 +1,6 @@
 //---------
 function convertToRoman(num) {
-    console.log(num);
+    //console.log(num);
     var out = ""
     var exp_all = (""+num).length - 1;
     for(var exp = exp_all; exp >= 0; exp--){
@@ -30,7 +30,7 @@ function simpleToRoman(num){
       bar_buffer += '_';
       exp -= 3;
     }
-    console.log(exp);
+    //console.log(exp);
     var one = bar_buffer + symbols[(Math.pow(10,exp))];
     //console.log(str_num*(10**exp));
     //console.log(one);
