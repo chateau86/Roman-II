@@ -5,7 +5,7 @@ function convertToRoman(num) {
     var exp_all = (""+num).length - 1;
     for(var exp = exp_all; exp >= 0; exp--){
         var str_num = parseInt((""+num)[exp_all-exp]);
-        out += simpleToRoman(str_num*(10**exp));        
+        out += simpleToRoman(str_num*(Math.pow(10,exp)));        
     }
     return out;
 }
@@ -31,11 +31,11 @@ function simpleToRoman(num){
       exp -= 3;
     }
     console.log(exp);
-    var one = bar_buffer + symbols[(10**exp)];
+    var one = bar_buffer + symbols[(Math.pow(10,exp))];
     //console.log(str_num*(10**exp));
     //console.log(one);
-    var five = bar_buffer + symbols[(10**exp)*5];
-    var ten = bar_buffer + symbols[(10**exp)*10];
+    var five = bar_buffer + symbols[(Math.pow(10,exp))*5];
+    var ten = bar_buffer + symbols[(Math.pow(10,exp))*10];
     switch(str_num){
         case 0: return "";
         case 1: return one;
