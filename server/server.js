@@ -66,7 +66,7 @@ function convertToRoman(num) {
     var exp_all = (""+num).length - 1;
     for(var exp = exp_all; exp >= 0; exp--){
         var str_num = parseInt((""+num)[exp_all-exp]);
-        out += simpleToRoman(str_num*(10**exp));        
+        out += simpleToRoman(str_num*(Math.pow(10,exp)));        
     }
     return out;
 }
